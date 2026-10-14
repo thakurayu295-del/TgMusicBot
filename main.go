@@ -16,7 +16,7 @@ package main
 // https://github.com/golang/go/issues/63903
 #cgo windows LDFLAGS: -L. -lntgcalls
 #include "ntgcalls/ntgcalls.h"
-#include "glibc_compatibility.h"
+
 */
 import "C"
 import (
