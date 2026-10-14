@@ -17,7 +17,8 @@ COPY . .
 RUN go run github.com/AshokShau/gotdbot/scripts/tools
 RUN go run setup_ntgcalls.go
 
-RUN CGO_ENABLED=1 GOOS=linux go build -ldflags="-w -s" -o main .
+RUN CGO_ENABLED=1 GOOS=linux \
+    go build -ldflags="-w -s -extldflags=-lresolv" -o main .
 
 FROM debian:12-slim AS runtime
 
